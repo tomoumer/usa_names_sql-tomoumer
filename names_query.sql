@@ -113,6 +113,26 @@
 -- SELECT COUNT(DISTINCT(name))
 -- FROM names;
 -- a: the total (done in two parts) is 10,773 names being unisex, over 98,400 distinct. So 10.95% 
+-- redoing the same above, with NEW and IMPROVED SQL knowledge (thx DataCamp)
+-- SELECT
+-- 	(SELECT COUNT(*)
+-- 	  FROM (SELECT name
+-- 	  		FROM names
+-- 	  		GROUP BY name
+-- 	  		HAVING COUNT(DISTINCT gender ) = 2) AS sub) /
+-- 	  CAST( COUNT(DISTINCT name) AS DOUBLE PRECISION) AS perc_unisex
+-- FROM names
+
+-- aand another way of doing it:
+-- SELECT 
+-- 	(SELECT COUNT(DISTINCT name)
+-- 	FROM names
+-- 	WHERE gender='F'
+-- 		AND name IN (SELECT DISTINCT name
+-- 					FROM names
+-- 					WHERE gender='M')) /
+-- 	CAST( COUNT(DISTINCT name) AS DOUBLE PRECISION) AS perc_unisex
+-- FROM names
 
 -- 15. How many names have made an appearance in every single year since 1880?
 -- SELECT name, COUNT(DISTINCT(year)) as num_years
@@ -152,4 +172,9 @@
 
 -- 20. Come up with a question that you would like to answer using this dataset.
 -- Then write a query to answer this question.
+-- SELECT *
+-- FROM names
+-- WHERE name='Tomo';
+
+
 

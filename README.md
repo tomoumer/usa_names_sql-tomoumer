@@ -1,3 +1,9 @@
+# PostgreSQL - exercise 1
+
+This was the very first exercise/assignment using [PostgreSQL](https://www.postgresql.org) that each student of the Data Science Bootcamp did. There are some unfinished questions (bonus questions) at the end that I didn't solve (yet?), as we moved to other projects. We had a review of the code with the class as well, which is when I added some alternative solutions to certain questions.
+
+Note: in order to not have all the querries run at all times, I commented each one out after I completed it.
+
 ## SQL Names
 
 Save a script containing the query you used to answer each question and your answer (as a comment).
